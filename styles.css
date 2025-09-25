@@ -1,0 +1,118 @@
+/* General Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    color: red; /* Wolf Developers in red */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Box Animation */
+#box {
+    width: 100px;
+    height: 100px;
+    background-color: #2196F3;
+    margin-top: 20px;
+    transition: transform 0.5s ease;
+}
+
+#box:hover {
+    transform: rotate(45deg);
+}
+
+/* Card Flip Animation */
+.card {
+    width: 150px;
+    height: 200px;
+    perspective: 1000px;
+    margin-top: 40px;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+.card-front {
+    background-color: #4CAF50;
+}
+
+.card-back {
+    background-color: #2196F3;
+    transform: rotateY(180deg);
+}
+
+/* Card flip effect */
+.card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+/* Modal Fade-in/Out */
+.hidden {
+    display: none;
+}
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+#modal.show {
+    opacity: 1;
+    visibility: visible;
+}
